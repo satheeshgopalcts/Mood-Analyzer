@@ -1,4 +1,3 @@
 # VibeCoding-Daily-Journal-Mood-Analyzer
 
-Your mission for the day is to build a web application that allows users to write daily
-journal entries and automatically analyse the mood. Project brief is proivided in projectbrief.md file
+A web application that allows users to write daily journal entries and manually track their moods through a simple and intuitive interface. The project focuses on personal reflection and mood tracking over time. Project brief is provided in projectbrief.md file.
