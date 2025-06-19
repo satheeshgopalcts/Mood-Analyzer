@@ -1,0 +1,24 @@
+<div class="journal-detail-container" *ngIf="journalEntry">
+  <div class="journal-header">
+    <h2>{{ journalEntry.title }}</h2>
+    <div class="journal-metadata">
+      <span class="mood">Mood: {{ journalEntry.mood }}</span>
+      <span class="date">{{ journalEntry.date | date: 'medium' }}</span>
+    </div>
+  </div>
+  
+  <div class="journal-content">
+    <p>{{ journalEntry.content }}</p>
+  </div>
+  
+  <div class="journal-actions">
+    <button routerLink="/journal">Back to List</button>
+    <button routerLink="/journal/{{ journalEntry.id }}/edit">Edit</button>
+    <button (click)="deleteEntry()">Delete</button>
+  </div>
+</div>
+
+<div class="not-found" *ngIf="!journalEntry">
+  <p>Journal entry not found</p>
+  <button routerLink="/journal">Back to Journal List</button>
+</div>

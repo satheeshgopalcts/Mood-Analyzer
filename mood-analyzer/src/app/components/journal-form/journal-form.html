@@ -1,0 +1,43 @@
+<div class="journal-form-container">
+  <h2>{{ isEditMode ? 'Edit' : 'Create' }} Journal Entry</h2>
+  
+  <form [formGroup]="journalForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input 
+        type="text" 
+        id="title" 
+        formControlName="title" 
+        placeholder="Enter journal title">
+      <div *ngIf="journalForm.get('title')?.invalid && journalForm.get('title')?.touched" class="error-message">
+        <span *ngIf="journalForm.get('title')?.errors?.['required']">Title is required</span>
+        <span *ngIf="journalForm.get('title')?.errors?.['minlength']">Title must be at least 3 characters</span>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="mood">How are you feeling?</label>
+      <select id="mood" formControlName="mood">
+        <option *ngFor="let mood of moodOptions" [value]="mood">{{ mood }}</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="content">Journal Entry</label>
+      <textarea 
+        id="content" 
+        formControlName="content" 
+        rows="10" 
+        placeholder="Write your thoughts here..."></textarea>
+      <div *ngIf="journalForm.get('content')?.invalid && journalForm.get('content')?.touched" class="error-message">
+        <span *ngIf="journalForm.get('content')?.errors?.['required']">Journal content is required</span>
+        <span *ngIf="journalForm.get('content')?.errors?.['minlength']">Journal content must be at least 10 characters</span>
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button type="button" routerLink="/journal">Cancel</button>
+      <button type="submit" [disabled]="journalForm.invalid">Save</button>
+    </div>
+  </form>
+</div>

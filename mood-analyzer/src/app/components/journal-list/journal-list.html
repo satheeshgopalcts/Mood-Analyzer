@@ -1,0 +1,29 @@
+<div class="journal-list-container">
+  <div class="header">
+    <h2>My Journal Entries</h2>
+    <button routerLink="/journal/new">New Entry</button>
+  </div>
+  
+  <div class="entries-list" *ngIf="journalEntries.length > 0; else noEntries">
+    <div class="entry-card" *ngFor="let entry of journalEntries">
+      <div class="entry-header">
+        <h3>{{ entry.title }}</h3>
+        <span class="mood-indicator">{{ entry.mood }}</span>
+      </div>
+      <div class="entry-date">{{ entry.date | date: 'medium' }}</div>
+      <p class="entry-preview">{{ entry.content | slice:0:150 }}{{ entry.content.length > 150 ? '...' : '' }}</p>
+      <div class="entry-actions">
+        <button routerLink="/journal/{{ entry.id }}">View</button>
+        <button routerLink="/journal/{{ entry.id }}/edit">Edit</button>
+        <button (click)="deleteEntry(entry.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noEntries>
+    <div class="no-entries">
+      <p>You don't have any journal entries yet.</p>
+      <button routerLink="/journal/new">Create your first entry</button>
+    </div>
+  </ng-template>
+</div>
