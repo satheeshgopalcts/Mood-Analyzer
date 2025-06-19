@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JournalService } from '../../services/journal.service';
 import { JournalEntry, Mood } from '../../models/journal-entry.model';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartData, ChartType, Chart, registerables } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-mood-analytics',
