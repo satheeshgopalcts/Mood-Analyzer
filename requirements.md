@@ -19,9 +19,9 @@
 ## Phase 2: Data Visualization
 
 ### To Do
-- [ ] Design and implement visual representations of mood data over time (e.g., charts or graphs)
-- [ ] Display mood trends and patterns to users
-- [ ] Ensure visualizations update as new entries are added
+- [x] Design and implement visual representations of mood data over time (e.g., charts or graphs)
+- [x] Display mood trends and patterns to users
+- [x] Ensure visualizations update as new entries are added
 
 ### Acceptance Criteria
 - Users can view visualizations of their mood data over time.
