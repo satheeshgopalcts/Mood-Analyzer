@@ -1,4 +1,5 @@
-  <div class="mood-analytics-container">
+<!-- filepath: c:\Users\Administrator\Mood-Analyzer\mood-analyzer\src\app\components\mood-analytics\mood-analytics.html -->
+<div class="mood-analytics-container">
   <div class="header">
     <h2>Mood Analytics</h2>
     <button routerLink="/journal">Back to Journal</button>

@@ -1,7 +1,10 @@
 <div class="journal-list-container">
   <div class="header">
     <h2>My Journal Entries</h2>
-    <button routerLink="/journal/new">New Entry</button>
+    <div class="actions">
+      <button routerLink="/analytics" class="analytics-button">View Analytics</button>
+      <button routerLink="/journal/new" class="new-entry-button">New Entry</button>
+    </div>
   </div>
   
   <div class="entries-list" *ngIf="journalEntries.length > 0; else noEntries">

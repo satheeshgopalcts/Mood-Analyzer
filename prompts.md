@@ -51,3 +51,28 @@ Uncaught Error: Could not resolve "@angular/animations/browser" imported by "@an
 ```
 store all the promts to prompts.md
 ```
+
+## Fixing Issues and Restarting App
+```
+Fix the issues and restart the app
+```
+
+## Continuing Phase 2 Implementation
+```
+@agent Continue: "Continue to iterate?"
+```
+
+## Updating Prompts with Latest
+```
+update the prompts with latest prompts
+```
+
+## Verifying Phase 2 Implementation
+```
+Refer requirements.md file and verify whether everything in phase 2 of the project has been implemented and Mark Items as done in TODO list only after verifying that the acceptance criteria has been met
+```
+
+## Updating Prompts
+```
+update the prompts to prompts.md
+```
