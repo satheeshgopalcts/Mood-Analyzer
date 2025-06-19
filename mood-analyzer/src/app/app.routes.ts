@@ -1,3 +1,13 @@
 import { Routes } from '@angular/router';
+import { JournalListComponent } from './components/journal-list/journal-list';
+import { JournalFormComponent } from './components/journal-form/journal-form';
+import { JournalDetailComponent } from './components/journal-detail/journal-detail';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', redirectTo: 'journal', pathMatch: 'full' },
+  { path: 'journal', component: JournalListComponent },
+  { path: 'journal/new', component: JournalFormComponent },
+  { path: 'journal/:id', component: JournalDetailComponent },
+  { path: 'journal/:id/edit', component: JournalFormComponent },
+  { path: '**', redirectTo: 'journal' }
+];

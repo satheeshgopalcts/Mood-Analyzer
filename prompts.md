@@ -15,7 +15,39 @@ Analyze the page and come up with reqirments in a to do list and define acceptan
 Add these to requirements.md file
 ```
 
-## Storing Prompts
+## Storing Prompts (Initial)
 ```
 store all the prompts to prompts.md file
+```
+
+## Creating Angular Project
+```
+create a latest angular project for the requirements
+```
+
+## Implementing Phase 1
+```
+Refer requirements.md file and implement phase 1 of the project and Mark Items as done in TODO list only after verifying that the acceptance criteria has been met
+```
+
+## Continue Implementation
+```
+@agent Continue: "Continue to iterate?"
+```
+
+## Restarting App
+```
+restart the app
+```
+
+## Fixing Animation Dependency Error
+```
+Uncaught Error: Could not resolve "@angular/animations/browser" imported by "@angular/platform-browser". Is it installed?
+    at optional-peer-dep:__vite-optional-peer-dep:@angular/animations/browser:@angular/platform-browser (platform-browser:1:7)
+    at __require (chunk-46DXP6YY.js:37:50)
+```
+
+## Updating Prompts File
+```
+store all the promts to prompts.md
 ```

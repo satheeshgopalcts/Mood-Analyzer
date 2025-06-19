@@ -3,10 +3,10 @@
 ## Phase 1: Journal Entry & Mood Tracking
 
 ### To Do
-- [ ] Set up project structure and environment
-- [ ] Create a user-friendly interface for writing daily journal entries
-- [ ] Implement functionality to save journal entries
-- [ ] Add a mood selection system with predefined options for each entry
+- [x] Set up project structure and environment
+- [x] Create a user-friendly interface for writing daily journal entries
+- [x] Implement functionality to save journal entries
+- [x] Add a mood selection system with predefined options for each entry
 
 ### Acceptance Criteria
 - Users can write and save daily journal entries.
