@@ -18,6 +18,7 @@ export class JournalFormComponent implements OnInit {
   moodOptions: Mood[] = [];
   isEditMode = false;
   entryId: string | null = null;
+  showSuccessMessage = false;
 
   constructor(
     private fb: FormBuilder,
@@ -73,7 +74,11 @@ export class JournalFormComponent implements OnInit {
         this.journalService.addJournalEntry(journalEntry);
       }
 
-      this.router.navigate(['/journal']);
+      this.showSuccessMessage = true;
+      setTimeout(() => {
+        this.showSuccessMessage = false;
+        this.router.navigate(['/journal']);
+      }, 2000);
     }
   }
 }

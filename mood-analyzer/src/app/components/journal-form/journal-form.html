@@ -1,13 +1,17 @@
 <div class="journal-form-container">
   <h2>{{ isEditMode ? 'Edit' : 'Create' }} Journal Entry</h2>
   
+  <div *ngIf="showSuccessMessage" class="success-message" data-test="success-message">
+    Entry saved successfully
+  </div>
+
   <form [formGroup]="journalForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Title</label>
-      <input 
-        type="text" 
+      <input        type="text" 
         id="title" 
         formControlName="title" 
+        data-test="entry-title"
         placeholder="Enter journal title">
       <div *ngIf="journalForm.get('title')?.invalid && journalForm.get('title')?.touched" class="error-message">
         <span *ngIf="journalForm.get('title')?.errors?.['required']">Title is required</span>
@@ -17,16 +21,16 @@
     
     <div class="form-group">
       <label for="mood">How are you feeling?</label>
-      <select id="mood" formControlName="mood">
-        <option *ngFor="let mood of moodOptions" [value]="mood">{{ mood }}</option>
+      <select id="mood" formControlName="mood" data-test="mood-selector">
+        <option *ngFor="let mood of moodOptions" [value]="mood" [attr.data-test]="'mood-option-' + mood.toLowerCase()">{{ mood }}</option>
       </select>
     </div>
     
     <div class="form-group">
       <label for="content">Journal Entry</label>
-      <textarea 
-        id="content" 
+      <textarea        id="content" 
         formControlName="content" 
+        data-test="entry-content"
         rows="10" 
         placeholder="Write your thoughts here..."></textarea>
       <div *ngIf="journalForm.get('content')?.invalid && journalForm.get('content')?.touched" class="error-message">
@@ -37,7 +41,7 @@
     
     <div class="form-actions">
       <button type="button" routerLink="/journal">Cancel</button>
-      <button type="submit" [disabled]="journalForm.invalid">Save</button>
+      <button type="submit" [disabled]="journalForm.invalid" data-test="save-entry-button">Save</button>
     </div>
   </form>
 </div>

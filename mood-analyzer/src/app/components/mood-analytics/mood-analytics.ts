@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JournalService } from '../../services/journal.service';
 import { JournalEntry, Mood } from '../../models/journal-entry.model';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartData, ChartType, Chart, registerables } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-mood-analytics',
@@ -57,7 +58,6 @@ export class MoodAnalyticsComponent implements OnInit, OnDestroy {
       }
     }
   };
-
   public moodTrendOptions: ChartConfiguration['options'] = {
     responsive: true,
     plugins: {
@@ -67,6 +67,20 @@ export class MoodAnalyticsComponent implements OnInit, OnDestroy {
       title: {
         display: true,
         text: 'Mood Trend Over Time'
+      },
+      tooltip: {
+        enabled: true,
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleFont: { size: 14 },
+        bodyFont: { size: 13 },
+        padding: 10,
+        callbacks: {
+          label: (context) => {
+            const value = context.parsed.y;
+            const moodValues = Object.values(Mood);
+            return `Mood: ${moodValues[value]}`;
+          }
+        }
       }
     },
     scales: {

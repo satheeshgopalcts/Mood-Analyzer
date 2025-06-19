@@ -1,14 +1,13 @@
 <div class="journal-list-container">
   <div class="header">
     <h2>My Journal Entries</h2>
-    <div class="actions">
-      <button routerLink="/analytics" class="analytics-button">View Analytics</button>
-      <button routerLink="/journal/new" class="new-entry-button">New Entry</button>
+    <div class="actions">      <button routerLink="/analytics" class="analytics-button" data-test="nav-analytics">View Analytics</button>
+      <button routerLink="/journal/new" class="new-entry-button" data-test="new-entry-button">New Entry</button>
     </div>
   </div>
   
-  <div class="entries-list" *ngIf="journalEntries.length > 0; else noEntries">
-    <div class="entry-card" *ngFor="let entry of journalEntries">
+  <div class="entries-list" data-test="entry-list" *ngIf="journalEntries.length > 0; else noEntries">
+    <div class="entry-card" data-test="entry-item" *ngFor="let entry of journalEntries">
       <div class="entry-header">
         <h3>{{ entry.title }}</h3>
         <span class="mood-indicator">{{ entry.mood }}</span>
