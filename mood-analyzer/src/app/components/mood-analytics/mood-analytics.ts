@@ -58,7 +58,6 @@ export class MoodAnalyticsComponent implements OnInit, OnDestroy {
       }
     }
   };
-
   public moodTrendOptions: ChartConfiguration['options'] = {
     responsive: true,
     plugins: {
@@ -68,6 +67,20 @@ export class MoodAnalyticsComponent implements OnInit, OnDestroy {
       title: {
         display: true,
         text: 'Mood Trend Over Time'
+      },
+      tooltip: {
+        enabled: true,
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleFont: { size: 14 },
+        bodyFont: { size: 13 },
+        padding: 10,
+        callbacks: {
+          label: (context) => {
+            const value = context.parsed.y;
+            const moodValues = Object.values(Mood);
+            return `Mood: ${moodValues[value]}`;
+          }
+        }
       }
     },
     scales: {

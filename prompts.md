@@ -76,3 +76,18 @@ Refer requirements.md file and verify whether everything in phase 2 of the proje
 ```
 update the prompts to prompts.md
 ```
+
+## Implementing and Testing Analytics
+```
+Implement end-to-end tests for analytics and visualization features in the Mood Analyzer application based on requirements.md
+```
+
+## Fixing Test Failures
+```
+Fix the failing test in visualization-features.cy.ts related to the mood summary element not being found
+```
+
+## Updating Prompts (Latest)
+```
+Add all the prompts to prompt.md
+```

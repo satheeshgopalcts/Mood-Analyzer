@@ -12,7 +12,7 @@
   </div>
   
   <div class="journal-actions">
-    <button routerLink="/journal">Back to List</button>
+    <button routerLink="/journal" data-test="nav-journal">Back to List</button>
     <button routerLink="/journal/{{ journalEntry.id }}/edit">Edit</button>
     <button (click)="deleteEntry()">Delete</button>
   </div>

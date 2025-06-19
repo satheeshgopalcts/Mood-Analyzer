@@ -30,16 +30,3 @@
 
 ---
 
-## Phase 3: User Experience, Privacy, and Testing
-
-### To Do
-- [ ] Enhance UI/UX for seamless interaction and minimal distractions
-- [ ] Implement privacy and security measures for journal and mood data
-- [ ] Validate mood selection and tracking across different scenarios
-- [ ] Test app performance and consistency across devices
-
-### Acceptance Criteria
-- The app is intuitive, with minimal technical distractions.
-- User data (journal entries and moods) is kept confidential and secure.
-- Mood tracking and selection work reliably in various scenarios.
-- The app performs efficiently and consistently on different devices.

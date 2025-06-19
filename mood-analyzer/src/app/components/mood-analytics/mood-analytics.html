@@ -1,4 +1,4 @@
-  <div class="mood-analytics-container">
+<div class="mood-analytics-container">
   <div class="header">
     <h2>Mood Analytics</h2>
     <button routerLink="/journal">Back to Journal</button>
@@ -6,11 +6,11 @@
 
   <div *ngIf="journalEntries.length > 0; else noData">
     <div class="time-period-controls">
-      <p>View data for:</p>
-      <div class="time-buttons">
+      <p>View data for:</p>      <div class="time-buttons" data-test="time-range-selector">
         <button 
           *ngFor="let period of timePeriods" 
           [class.active]="selectedTimePeriod === period"
+          [attr.data-test]="'range-' + period"
           (click)="onTimePeriodChange(period)"
         >
           {{ period | titlecase }}
@@ -18,10 +18,9 @@
       </div>
     </div>
 
-    <div class="charts-container">
-      <div class="chart-box mood-distribution">
+    <div class="charts-container">      <div class="chart-box mood-distribution" data-test="mood-distribution">
         <h3>Mood Distribution</h3>
-        <canvas baseChart
+        <canvas baseChart data-test="mood-chart"
           [data]="moodDistributionData"
           [options]="moodDistributionOptions"
           [type]="doughnutChartType">
@@ -42,11 +41,9 @@
           <p>This chart tracks how your mood has changed over time.</p>
         </div>
       </div>
-    </div>
-
-    <div class="mood-insight">
+    </div>    <div class="mood-insight" data-test="mood-insights">
       <h3>Mood Insights</h3>
-      <p>{{ getMoodTrendAnalysis() }}</p>
+      <p data-test="trend-analysis">{{ getMoodTrendAnalysis() }}</p>
       <div class="tips" *ngIf="journalEntries.length >= 3">
         <h4>Suggestions based on your mood patterns:</h4>
         <ul>
@@ -55,18 +52,18 @@
           <li>Use this data to identify what brings you joy or what causes stress</li>
         </ul>
       </div>
-      <div class="mood-summary" *ngIf="journalEntries.length >= 5">
+      <div class="mood-summary" data-test="mood-summary" *ngIf="journalEntries.length >= 5">
         <h4>Your Mood Summary</h4>
         <div class="summary-stats">
-          <div class="stat-card">
+          <div class="stat-card" data-test="stat-frequent-mood">
             <span class="stat-number">{{ getMostFrequentMood() }}</span>
             <span class="stat-label">Most Frequent Mood</span>
           </div>
-          <div class="stat-card">
+          <div class="stat-card" data-test="stat-total-entries">
             <span class="stat-number">{{ journalEntries.length }}</span>
             <span class="stat-label">Total Entries</span>
           </div>
-          <div class="stat-card">
+          <div class="stat-card" data-test="stat-consistency">
             <span class="stat-number">{{ getMoodConsistency() }}%</span>
             <span class="stat-label">Mood Consistency</span>
           </div>
